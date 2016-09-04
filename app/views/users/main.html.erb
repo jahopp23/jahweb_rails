@@ -1,0 +1,25 @@
+<h3>Register</h3>
+<form action="/create" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label>First Name:</label>
+	<input type="text" name="user[first_name]">
+	<label>Last Name:</label>
+	<input type="text" name="user[last_name]">
+	<label>Email:</label>
+	<input type="email" name="user[email]">
+	<label>Password:</label>
+	<input type="password" name="user[password]">
+	<input type="submit" value="Register">
+</form>
+<%= flash[:register_errors] %>
+
+<h3>Login</h3>
+<form action="/login" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label>Email:</label>
+	<input type="email" name="user[email]">
+	<label>Password:</label>
+	<input type="password" name="user[password]">
+	<input type="submit" value="Login">
+</form>
+<%= flash[:login_errors] %>
