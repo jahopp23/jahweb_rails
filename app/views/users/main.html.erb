@@ -1,3 +1,65 @@
+<head>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<style>
+
+
+
+input{
+	width:100%;
+}
+
+
+.navbar-header{
+	height: 75px;
+}
+
+.header{
+	background-color: black;
+	width: auto;
+	height: 50px;
+}
+
+
+h2{
+	color: green;
+	font-family: courier;
+	zoom: 200%;
+	margin: 20px; 
+}
+
+.well{
+	margin-top: 50px;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="disabled"><h2><strong>SuperGroup</strong>	</h2></li>
+</ul>
+
+
+<div class="container">
+
+<h3><em>create super community groups with SuperGroup!</em></h3>
+
+<div class="row">                  
+<div class = "col-md-4">
+
+<div class="well">
 <h3>Register</h3>
 <form action="/create" method="POST">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -12,7 +74,13 @@
 	<input type="submit" value="Register">
 </form>
 <%= flash[:register_errors] %>
+</div>
+</div>
 
+
+<div class="col-md-4">
+
+<div class="well">
 <h3>Login</h3>
 <form action="/login" method="POST">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -23,3 +91,8 @@
 	<input type="submit" value="Login">
 </form>
 <%= flash[:login_errors] %>
+</div>
+</div>
+
+</div>
+</div>

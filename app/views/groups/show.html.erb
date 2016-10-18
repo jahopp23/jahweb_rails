@@ -1,32 +1,101 @@
-<a href="/groups">Dashboard</a>
-<a href="/logout">Logout</a>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+
+<style>
+
+input{
+	width:100%;
+}
+
+.form-group-input{
+	width: 50%;
+	margin-top: 50px; 
+}
+
+
+.navbar-header{
+	height: 75px;
+}
+
+.header{
+	
+	width: auto;
+	height: 50px;
+}
+
+
+h2{
+	color: green;
+	font-family: courier;
+	zoom: 200%;
+	margin: 20px; 
+}
+
+.well{
+	margin-top: 50px;
+}
+
+.btn{
+	width: 125px;
+}
+</style>
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="disabled"><h2><strong>SuperGroup</strong>	</h2></li>
+</ul>
+
+<div class="container">
+
+
+<ul class="nav nav-pills">
+<li><a href="/groups">Dashboard</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+
+
+
+<div class="col-md-4">
 <h1><%= @group.name %></h1>
+
+<p><strong><%= @group.description %></strong></p>
+
+<% if @group.user_id == current_user.id %>
+	<p>Created By: <%= current_user.first_name %></p>
+<% else %>
+	<p>Created By: <%= @group.user.first_name %> <%= @group.user.last_name %></p>
+<% end %>
+</div>
+
+<div class="col-md-4">
+<h3>Members:</h3>
+<% @group.members_joined.each do |g| %>
+<ul>
+	<li><h4><%= g.first_name %> <%= g.last_name %><h4></li>
+</ul>
+<% end %>
+
 <% if @group.members_joined.include?(current_user) %>
 	<form action="/leave_group" method="POST">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<input type="hidden" name="_method" value="delete">
 		<input type="hidden" name="group_id" value="<%= @group.id %>">
-		<input type="submit" value="Leave Group">
+		<input class="btn btn-danger" type="submit" value="Leave Group">
 	</form>
 <% else %>
 	<form action="/join_group" method="POST">
+
+        <div class="form-group-input">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<input type="hidden" name="group_id" value="<%= @group.id %>">
-		<input type="submit" value="Join Group">
+		<input class="btn btn-primary" type="submit" value="Join Group">
+		</div>
 	</form>
 <% end %>
-<%= @group.description %>
-
-<% if @group.user_id == current_user.id %>
-	<p>Created By: YOU</p>
-<% else %>
-	<p>Created By: <%= @group.user.first_name %> <%= @group.user.last_name %></p>
-<% end %>
-
-<h2>Members:</h2>
-<% @group.members_joined.each do |g| %>
-<ul>
-	<li><%= g.first_name %> <%= g.last_name %></li>
-</ul>
-<% end %>
+</div>
+</div>

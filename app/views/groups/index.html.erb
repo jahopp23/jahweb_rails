@@ -1,31 +1,128 @@
-<h2>Hi <%= @user.first_name %></h2>
-<a href="/logout">Logout</a>
-<h3>Here are the organizations you may join:</h3>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+
+<style>
+
+
+
+input{
+	width:100%;
+}
+
+
+.navbar-header{
+	height: 75px;
+}
+
+.header{
+	background-color: black;
+	width: auto;
+	height: 50px;
+}
+
+
+h2{
+	color:green;
+	font-family: courier;
+	zoom: 200%;
+	margin: 20px; 
+}
+
+.well{
+	margin-top: 50px;
+	margin: 10px; 
+
+}
+
+
+.col-md-4{
+	display: inline-block;
+}
+
+.col-md-4 input{
+	display: inline-block;
+}
+
+.btn{
+	width: 100px; 
+}
+
+
+</style>
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="disabled"><h2><strong>SuperGroup</strong>	</h2></li>
+</ul>
+
+
+
+<div class="container">
+
+<h3>Hi <%= @user.first_name %></h3>
+<a href="/logout">Logout</a>
+
+<div class="col-md-4">
+
+<h3>Recent Groups</h3>
+
+<div class="well">
 <% @groups.each do |g| %>
+	<h3><a href="/groups/<%= g.id %>"><%= g.name %></a></h3>
+	<p>Members:<%= g.members.count %></p>
+	<p><strong><%= g.description %></strong></p>
+<hr>
+
+
 <% if current_user.id == g.user_id %>
 	<form action="/destroy" method="POST">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<input type="hidden" name="group_id" value="<%= g.id %>">
 		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Delete">
+		<input class="btn btn-danger" type="submit" value="Delete" >
 	</form>
 <% end %>
-	<a href="/groups/<%= g.id %>"><%= g.name %></a>
-	<p>Members:<%= g.members.count %></p>
-	<p><%= g.description %></p>
-<hr>
 <% end %>
+</div>
+</div>
 
+
+
+
+
+<div class="col-md-4">
 <h3>Create a new organization:</h3>
+
+
 <form action="/create_group" method="POST">
+   
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<div class="form-group">
 	<label>Org Name:</label>
 	<input type="text" name="group[name]">
+	</div>
+
+	<div class="form-group">
 	<label>Description:</label>
 	<textarea name="group[description]"></textarea>
-	<input type="submit" value="Create">
+	</div>
+
+	<input class="btn btn-primary" type="submit" value="Create">
+	
 </form>
 <% if flash[:errors] %>
 	<%= flash[:errors] %>
 <% end %>
+
+
+</div>
+
+
