@@ -10,15 +10,25 @@
 
 
 <div class="container">
+
   <h2><span class="glyphicon glyphicon-flag"></span><strong>SuperGroups</strong></h2>
-    <h3>Dashboard</h3>
-    <div class="panel panel-default">
+
+
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+        <h3><strong>Dashboard</strong></h3>
+    
+      <h3><em>Hi, <%= @user.first_name %></em></h3>
       <ul class="nav nav-pills">
        <li><a href="/logout">Logout</a></li>
      </ul>
-    </div> 	
-  <h3><em>Hi <%= @user.first_name %></em></h3>
-</div>
+    </div>
+   </div>
+ </div>
+
+   
+  
 
 
 <div class="container">

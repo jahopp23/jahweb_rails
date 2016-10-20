@@ -27,9 +27,10 @@
 <div class="container">
 <div class="col-md-4">
 <div class="panel panel-default">
-<div class="panel-body">
+<div class="panel-heading">
 <h1><strong><%= @group.name %></strong></h1>
-
+</div>
+<div class="panel-body">
 <h4><strong>About</strong></h4>
 <p><em><%= @group.description %></em></p>
 <p><a><%= @group.link %></a></p>
@@ -46,8 +47,10 @@
 
 <div class="col-md-4">
   <div class="panel panel-default">
-   <div class="panel-body">
+    <div class="panel-heading">
     <h3><strong>Members</strong></h3>
+    </div>
+     <div class="panel-body">
 		<% @group.members_joined.each do |g| %>
 		<ul>
 			<li><h4><%= g.first_name %> <%= g.last_name %><h4></li>
