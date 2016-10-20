@@ -1,0 +1,66 @@
+/* line 7, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+input {
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+
+/* line 14, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.navbar-header {
+  height: 75px;
+}
+
+/* line 18, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+label {
+  clear: left;
+  text-align: right;
+}
+
+/* line 23, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.header {
+  background-color: black;
+  width: auto;
+  height: 50px;
+}
+
+/* line 30, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+a input {
+  background-color: white;
+  border: none;
+}
+
+/* line 37, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+container .panel {
+  display: inline-block;
+}
+
+/* line 41, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.col-md-4 {
+  display: inline-block;
+}
+
+/* line 46, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.col-md-4 input {
+  display: inline-block;
+}
+
+/* line 50, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.btn {
+  width: 100px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

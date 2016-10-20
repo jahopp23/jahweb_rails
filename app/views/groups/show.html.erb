@@ -6,96 +6,79 @@
 
 </head>
 
-<style>
 
-input{
-	width:100%;
-}
-
-.form-group-input{
-	width: 50%;
-	margin-top: 50px; 
-}
-
-
-.navbar-header{
-	height: 75px;
-}
-
-.header{
-	
-	width: auto;
-	height: 50px;
-}
-
-
-h2{
-	color: green;
-	font-family: courier;
-	zoom: 200%;
-	margin: 20px; 
-}
-
-.well{
-	margin-top: 50px;
-}
-
-.btn{
-	width: 125px;
-}
-</style>
-
-
+<div class="container">
 <ul class="nav nav-pills">
-  <li role="presentation" class="disabled"><h2><strong>SuperGroup</strong>	</h2></li>
+  <li role="presentation" class="disabled"><h2><span class="glyphicon glyphicon-flag"></span><strong>SuperGroups</strong>	</h2></li>
 </ul>
+</div>
 
 <div class="container">
 
-
+<div class="panel panel-default">
 <ul class="nav nav-pills">
 <li><a href="/groups">Dashboard</a></li>
 <li><a href="/logout">Logout</a></li>
 </ul>
+</div>
+</div>
 
 
-
+<div class="container">
 <div class="col-md-4">
-<h1><%= @group.name %></h1>
+<div class="panel panel-default">
+<div class="panel-body">
+<h1><strong><%= @group.name %></strong></h1>
 
-<p><strong><%= @group.description %></strong></p>
+<h4><strong>About</strong></h4>
+<p><em><%= @group.description %></em></p>
+<p><a><%= @group.link %></a></p>
 
 <% if @group.user_id == current_user.id %>
-	<p>Created By: <%= current_user.first_name %></p>
+	<p>Created By: <strong><%= current_user.first_name %></strong></p>
 <% else %>
 	<p>Created By: <%= @group.user.first_name %> <%= @group.user.last_name %></p>
 <% end %>
 </div>
+</div>
+</div>
+
 
 <div class="col-md-4">
-<h3>Members:</h3>
-<% @group.members_joined.each do |g| %>
-<ul>
-	<li><h4><%= g.first_name %> <%= g.last_name %><h4></li>
-</ul>
-<% end %>
+  <div class="panel panel-default">
+   <div class="panel-body">
+    <h3><strong>Members</strong></h3>
+		<% @group.members_joined.each do |g| %>
+		<ul>
+			<li><h4><%= g.first_name %> <%= g.last_name %><h4></li>
+		</ul>
+		<% end %>
 
+		
+   </div>
+  </div>
+</div>
+
+<div class="col-md-4">
 <% if @group.members_joined.include?(current_user) %>
-	<form action="/leave_group" method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="hidden" name="_method" value="delete">
-		<input type="hidden" name="group_id" value="<%= @group.id %>">
-		<input class="btn btn-danger" type="submit" value="Leave Group">
-	</form>
-<% else %>
-	<form action="/join_group" method="POST">
+			<form action="/leave_group" method="POST">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<input type="hidden" name="_method" value="delete">
+				<input type="hidden" name="group_id" value="<%= @group.id %>">
+				<input class="btn btn-danger" type="submit" value="Leave Group">
+			</form>
+		<% else %>
+			<form action="/join_group" method="POST">
 
-        <div class="form-group-input">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="hidden" name="group_id" value="<%= @group.id %>">
-		<input class="btn btn-primary" type="submit" value="Join Group">
-		</div>
-	</form>
-<% end %>
+		        <div class="form-group-input">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<input type="hidden" name="group_id" value="<%= @group.id %>">
+				<input class="btn btn-primary" type="submit" value="Join Group">
+				</div>
+			</form>
+		<% end %>
+</div>
+
+
 </div>
 </div>

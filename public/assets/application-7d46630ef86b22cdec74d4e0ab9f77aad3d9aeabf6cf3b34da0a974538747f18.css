@@ -1,0 +1,90 @@
+/* line 7, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+input {
+  width: 100%;
+}
+
+/* line 12, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.navbar-header {
+  height: 75px;
+}
+
+/* line 16, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.header {
+  background-color: black;
+  width: auto;
+  height: 50px;
+}
+
+/* line 23, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+h2 {
+  color: green;
+  font-family: courier;
+  zoom: 200%;
+  margin: 20px;
+}
+
+/* line 30, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.well {
+  margin-top: 50px;
+  margin: 10px;
+}
+
+/* line 37, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.col-md-4 {
+  display: inline-block;
+}
+
+/* line 41, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.col-md-4 input {
+  display: inline-block;
+}
+
+/* line 45, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/groups.scss */
+.btn {
+  width: 100px;
+}
+/* line 8, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/users.scss */
+input {
+  width: 100%;
+}
+
+/* line 13, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/users.scss */
+.navbar-header {
+  height: 75px;
+}
+
+/* line 17, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/users.scss */
+.header {
+  background-color: black;
+  width: auto;
+  height: 50px;
+}
+
+/* line 24, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/users.scss */
+h2 {
+  color: green;
+  font-family: courier;
+  zoom: 200%;
+  margin: 20px;
+}
+
+/* line 31, /home/jah113/NewRuby/SuperGroup/app/assets/stylesheets/users.scss */
+.well {
+  margin-top: 50px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

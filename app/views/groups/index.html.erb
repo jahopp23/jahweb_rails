@@ -8,121 +8,93 @@
 
 </head>
 
-<style>
 
-
-
-input{
-	width:100%;
-}
-
-
-.navbar-header{
-	height: 75px;
-}
-
-.header{
-	background-color: black;
-	width: auto;
-	height: 50px;
-}
-
-
-h2{
-	color:green;
-	font-family: courier;
-	zoom: 200%;
-	margin: 20px; 
-}
-
-.well{
-	margin-top: 50px;
-	margin: 10px; 
-
-}
-
-
-.col-md-4{
-	display: inline-block;
-}
-
-.col-md-4 input{
-	display: inline-block;
-}
-
-.btn{
-	width: 100px; 
-}
-
-
-</style>
-
-
-<ul class="nav nav-pills">
-  <li role="presentation" class="disabled"><h2><strong>SuperGroup</strong>	</h2></li>
-</ul>
-
+<div class="container">
+  <h2><span class="glyphicon glyphicon-flag"></span><strong>SuperGroups</strong></h2>
+    <h3>Dashboard</h3>
+    <div class="panel panel-default">
+      <ul class="nav nav-pills">
+       <li><a href="/logout">Logout</a></li>
+     </ul>
+    </div> 	
+  <h3><em>Hi <%= @user.first_name %></em></h3>
+</div>
 
 
 <div class="container">
+  <div class="col-md-4">
+   <div class="panel panel-default">
+    <div class="panel-heading">
+     <h3><strong>Recent Groups</strong></h3>
+     </div>
+     <div class="panel-body">
+		<% @groups.each do |g| %>
+			<h3><a href="/groups/<%= g.id %>"><%= g.name %></a></h3>
+			<p>Members:<%= g.members.count %></p>
+			<p><strong><%= g.description %></strong></p>
+			<a href><%= g.link %></a>
+			<hr>
 
-<h3>Hi <%= @user.first_name %></h3>
-<a href="/logout">Logout</a>
+			<% if current_user.id == g.user_id %>
+				<form action="/destroy" method="POST">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					<input type="hidden" name="group_id" value="<%= g.id %>">
+					<input type="hidden" name="_method" value="delete">
+					<a><input type="submit" value="Delete Group" ></a>
+				</form>
+				<br>
+				<br>
+			<% end %>
+			<% end %>
+
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 <div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><strong>Create a new organization </strong></h3>
+      </div>
+       <div class="panel-body">
+			<form action="/create_group" method="POST">
+			   
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-<h3>Recent Groups</h3>
+				<div class="form-group">
+				<label>Org Name:</label>
+				<input type="text" name="group[name]">
+				</div>
+				</br> 
+				</br>
 
-<div class="well">
-<% @groups.each do |g| %>
-	<h3><a href="/groups/<%= g.id %>"><%= g.name %></a></h3>
-	<p>Members:<%= g.members.count %></p>
-	<p><strong><%= g.description %></strong></p>
-<hr>
+				<div class="form-group">
+				<label>Description:</label>
+				<textarea name="group[description]"></textarea>
+				</div>
 
-
-<% if current_user.id == g.user_id %>
-	<form action="/destroy" method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="hidden" name="group_id" value="<%= g.id %>">
-		<input type="hidden" name="_method" value="delete">
-		<input class="btn btn-danger" type="submit" value="Delete" >
-	</form>
-<% end %>
-<% end %>
-</div>
-</div>
-
-
-
-
-
-<div class="col-md-4">
-<h3>Create a new organization:</h3>
-
-
-<form action="/create_group" method="POST">
-   
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-	<div class="form-group">
-	<label>Org Name:</label>
-	<input type="text" name="group[name]">
-	</div>
-
-	<div class="form-group">
-	<label>Description:</label>
-	<textarea name="group[description]"></textarea>
-	</div>
-
-	<input class="btn btn-primary" type="submit" value="Create">
-	
-</form>
-<% if flash[:errors] %>
-	<%= flash[:errors] %>
-<% end %>
-
-
+				<div class="form-group">
+				<label>Link:</label>
+				<input type="text" name="group[link]">
+				</div>
+			 
+			    <div class="form-group">
+				<input class="btn btn-primary" type="submit" value="Create">
+				</div>
+				
+			</form>
+			<% if flash[:errors] %>
+				<%= flash[:errors] %>
+			<% end %>
+    </div>
+  </div>
 </div>
 
 
+</div>
