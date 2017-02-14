@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
 		group = Group.new(group_params)
 		group.user_id = user.id
 		if group.save
-			flash[:success] = "Successful Group Post!"
+			flash[:success] = "You have successfully create a new group!"
 			redirect_to '/groups'
 		else
 			flash[:errors] = group.errors.full_messages

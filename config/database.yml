@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -26,7 +26,7 @@ default: &default
 
 development:
   <<: *default
-  adapter: postgresql
+  adapter: sqlite3
   database: supergroupdb_development
   pool: 5
   timeout: 5000
@@ -64,7 +64,7 @@ development:
 test:
   <<: *default
   database: supergroupdb_test
-  adapter: postgresql
+  adapter: sqlite3
   pool: 5
   timeout: 5000
 
@@ -90,6 +90,6 @@ test:
 production:
   <<: *default
   database: supergroupdb_production
-  adapter: postgresql
+  adapter: sqlite3
   pool: 5 
   timeout: 5000
