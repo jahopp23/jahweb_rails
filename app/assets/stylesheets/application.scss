@@ -17,3 +17,217 @@
 @import "bootstrap"; 
 
 
+
+
+
+
+.col-md-4{
+	display: inline-block;
+	text-align: right;
+}
+
+.col-md-6 h4{
+	padding: 1.00em;
+	color: #3D3D3D;
+}
+
+#info-section .row{
+	background-color: #EAFEF9;
+	width: auto;
+	text-align: right;
+
+}
+
+
+#project-section h3{
+	text-align: center;
+}
+
+
+
+.col-md-4 p {
+	display: inline-block;
+	font-size: 0.60em;
+
+}
+
+.col-md-6{
+	display: inline-block;
+}
+
+.lead {
+	color: green;
+}
+
+.row{
+	
+	background-color: #00FC72;
+	
+}
+
+.row ul li{
+	display: inline-block; 
+	list-style-type: none;
+	font-size: 0.80em;
+	padding: 1.00em;
+}
+
+.row ul li a {
+	color: white;
+	font-weight: bold;
+}
+
+.row ul li a:hover{
+	color: #3D3D3D;
+	text-decoration: none;
+}
+
+
+
+
+
+.row p{
+	display: inline-block;
+	font-size: 0.80em;
+	padding: 1.00em;
+	
+}
+
+#home-section .row{
+	text-align: center;
+	background-color: white;
+
+
+}
+
+#home-section h4{
+	color: black;
+	margin: 1.00em;
+}
+
+#home-section .img-responsive {
+	width: 175px;
+	height: 80px;
+	display: inline-block;
+	padding: 1.00em;
+}
+
+#home-section .col-md-4 p{
+
+    font-size: 0.50em;
+    text-align: center;
+    padding: 0.25em;
+    display: block;
+    font-weight: bold;
+	
+}
+
+#home-section .col-md-4{
+	background-color: white;
+	height: auto;
+	width: auto;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	margin: 0.15em;
+}
+
+#home-section .col-lg-12{
+	padding: 1.00em;
+	text-align: center;
+}
+
+#home-section .col-lg-12 p{
+	padding: 1.00em;
+	margin: 1.00em;
+	font-size: 0.90em;
+	line-height: 180%;
+	font-weight: bold;
+}
+
+#home-section{
+	margin: 4.00em;
+}
+
+#about-section h3{
+	text-align: center;
+	font-weight: bold;
+	
+}
+
+#about-section ul li{
+	padding: 0.50em;
+	font-size: 0.75em;
+	list-style-type: none;
+	text-align: left;
+	
+}
+
+#about-section p{
+	font-size: 1.00em;
+}
+
+#about-section {
+	margin: 6.00em;
+}
+
+body{
+
+
+
+}
+
+#contact-section ul li{
+	list-style-type: none;
+	text-align: center;
+
+}
+
+#contact-section h4{
+	font-weight: bold;
+	margin: 1.00em;
+}
+
+#contact-section p{
+	font-size: 0.70em;
+	display: block;
+	text-align: center;
+}
+
+#contact-section ul li a{
+     color: black;
+     font-weight: bold;
+}
+
+#contact-section ul li a:hover{
+	color: blue;
+}
+
+#resume-section .col-lg-12{
+	text-align: left;
+
+}
+
+#resume-section{
+	margin: 6.00em;
+}
+
+#resume-section ul li{
+	list-style-type: none;
+	font-size: 0.750em;
+	padding: 0.25em;
+}
+footer .row{
+	background-color: white;
+	width: auto;
+	text-align: center;
+	margin-top: 2.00em;
+}
+
+footer .row p {
+	display: block;
+	padding:0em;
+	text-align: center;
+
+
+}

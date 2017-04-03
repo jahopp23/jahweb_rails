@@ -1,99 +1,132 @@
 <html>
 <head>
+<%= stylesheet_link_tag "groups.scss" %>
+<%= stylesheet_link_tag "application.scss" %>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 </head>
 <body>
 
+<div class="container-fluid">
 
-<div class="container">
-  <div class="panel panel-default">
-     <div class="panel-body">
-       <h3><em>Hi, <%= @user.first_name %></em></h3>
-       <ul class="nav nav-pills">
-       <li><a href="/logout">Logout</a></li>
-      </ul>
-    </div>
-   </div>
-  </div>
+
+
+			<div class="row">
+			  <div class="col-md-6"><h4><strong>John A. Hopper / Web Developer</strong></h4></div>
+
+			  <div class="col-md-6">
+
+			     <ul>
+					   <li><a href=
+				        "/groups">Home</a></li>
+					   <li><a href="/about">About</a></li>
+					   <li><a href="/projects">Projects</a></li>
+					   <li><a href="/resume">Resume</a></li>
+					   <li><a href="/contact">Contact</a></li>
+					   </ul>
+			  	
+
+
+			  </div>
+			 
+			  
+
+			 <!-- End Row --> 
+			</div>
+
+
+            <section id="info-section">
+			<div class="row">
+
+      <p><strong>Welcome, </strong><%= @user.first_name %></p>
+     
+      <p><a href="/logout"><em>logout</em></a></p>
+</div>
+</section>
+
+
+
+
+<section id="home-section">
+<div class="row">
+
+
+<div class="col-md-4">
+<div class="img-responsive">
+<img class="img-responsive" alt="frontend" src="assets/frontend.png" />
+<p>Responsive Front-End UI/UX Design</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="img-responsive">
+<img class="img-responsive" alt="backend" src="assets/backend.png" />
+<p>Back-End Server Programming</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="img-responsive">
+<img class="img-responsive" alt="database" src="assets/database.png" />
+<p>Database</p>
+</div>
+</div>
+
+<div class="col-lg-12">
+
+<p> Hello, all!</p>
+
+<p>I am a professionally-trained Full Stack Web Developer (Coding Dojo Certified "Yellow Belt for HTML/CSS" and "Black Belt for Ruby On Rails").  I design websites, build servers, and create full-stack web applications! In today's competitive world, it is crucial to include the best methods in your website, including -- optimization for mobile-phones and tablets, responsively designed content, efficient servers, and a design approach that is the best for user interaction and experience.</p>
+<p>I chose to become a coder because I love to use visual design and solve logical problems, and coding is the best of both worlds! I believe that building applications and software is a premium human experience that changes the world for the better. </p>
+<p> I am currently seeking opportunities as Web Designer, Web Developer, Front-End Web Developer, or Full Stack Web Developer. </p
+</div>
+
+</div>
+</section>
+
+
+
+
+<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; John Allen Hopper 2017</p>
+                    <p>Webmaster & Designer <a href="johnallenhopper.herokuapp.com">John A. Hopper</a></p>
+                </div>
+            </div>
+        </footer>
+
+
+		
+
+
+<!-- End Container -->
+</div>
+
+
+  
+     
+
+
+
+
+      
+
+
+
+    
+
+    
+
+
+ 
+
 
    
   
 
 
-<div class="container">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-     <div class="panel-heading">
-      <h3><strong>Groups you may join:</strong></h3>
-     </div>
-     <div class="panel-body">
-		<% @groups.each do |g| %>
-			<h3><a href="/groups/<%= g.id %>"><%= g.name %></a></h3>
-			<p>Members: <%= g.members.count %></p>
-			<p><strong><%= g.description %></strong></p>
-			<a href><%= g.link %></a>
-			<hr>
-
-			<% if current_user.id == g.user_id %>
-				<form action="/destroy" method="POST">
-					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-					<input type="hidden" name="group_id" value="<%= g.id %>">
-					<input type="hidden" name="_method" value="delete">
-					<a><input type="submit" value="Delete Group" class="btn btn-danger"></a>
-				</form>
-				
-			<% end %>
-		<% end %>
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<div class="col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3><strong>Create a new organization </strong></h3>
-      </div>
-       <div class="panel-body">
-			<form action="/create_group" method="POST">
-			   
-				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-				<div class="form-group">
-				<label>Org Name:</label>
-				<input type="text" name="group[name]" class="form-control">
-				</div>
-			
-
-				<div class="form-group">
-				<label>Description:</label>
-				<textarea name="group[description]" class="form-control"></textarea>
-				</div>
-
-				<div class="form-group">
-				<label>Link:</label>
-				<input type="text" name="group[link]" class="form-control">
-				</div>
-			 
-			    <div class="form-group">
-				<input class="btn btn-primary" type="submit" value="Create">
-				</div>
-				
-			</form>
-			<% if flash[:errors] %>
-				<%= flash[:errors] %>
-			<% end %>
-    </div>
-  </div>
-</div>
-
-
-</div>
 
 </body>
 </html>

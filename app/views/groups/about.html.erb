@@ -1,0 +1,97 @@
+<html>
+<head>
+<%= stylesheet_link_tag "groups.scss" %>
+<%= stylesheet_link_tag "application.scss" %>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+
+
+			<div class="row">
+			  <div class="col-md-6">
+			      <h4><strong>John A. Hopper / Web Developer</strong></h4>
+			</div>
+
+			  <div class="col-md-6">
+
+			     <ul>
+					   <li><a href=
+				        "/groups">Home</a></li>
+					   <li><a href="/about">About</a></li>
+					   <li><a href="/projects">Projects</a></li>
+					   <li><a href="/resume">Resume</a></li>
+					   <li><a href="/contact">Contact</a></li>
+					   </ul>  	
+
+
+			  </div>
+			 
+			  
+
+			 <!-- End Row --> 
+			</div>
+
+  <section id="info-section">
+      <div class="row">
+       
+       
+          
+
+    
+      <p><strong>Welcome, </strong><%= @user.first_name %></p>
+     
+      <p><a href="/logout"><em>logout</em></a></p>
+      
+</div>
+</section>
+
+
+<section id="about-section">
+   <div class="col-lg-12">
+
+
+
+
+
+
+  <ul>
+          <li><strong>Full Name:</strong> John Allen Hopper</li>
+          <li><strong>Hometown:</strong> Houston, Texas</li>
+          <li><strong>Currently Residing: </strong> Dallas, Texas</li>
+          <li><strong>Education: </strong>University of North Texas, Coding Dojo</li>
+          <li><strong>What I Do:</strong> I can design static and responsive websites, web applications, build the servers which power such applications, and hook up the site to databases. My software arsenal includes everything you need to catapult your ideas onto the web! I have 8+ years of programming knowledge, and experience with the most modern tech!</li>
+          <li><strong>Programming Languages: </strong>Bash Command Line, HTML, CSS, JavaScript, JQuery, Ruby, Python</li>
+          <li><strong>Favorite Tech: </strong>MVC Architecture, including: Ruby On Rails, MEAN Stack, Python Flask/Django, Servers: Node.js, Rails, Amazon, Databases: MongoDB, Postgresql, SQL</li>
+          <li><strong>Operating System:</strong>Ubuntu 16.0.4 Xenial </li>
+          <li><strong>Hobbies:</strong> Coding, Design, Anthropology, Art, Photography, Music, Coffee; Philosophy</li>
+          <li><p><strong><em>I absolutely love to design websites for all purposes! If you are an artist, musician, enterpreneur...even better!</em></strong></p></li>
+
+        </ul>
+
+        </div>
+
+
+</section>
+
+
+
+<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; John Allen Hopper 2017</p>
+                    <p>Webmaster & Designer <a href="johnallenhopper.herokuapp.com">John A. Hopper</a></p>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+</body>
+
+</html>

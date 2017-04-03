@@ -1,0 +1,163 @@
+<html>
+<head>
+<%= stylesheet_link_tag "groups.scss" %>
+<%= stylesheet_link_tag "application.scss" %>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+
+
+			<div class="row">
+			  <div class="col-md-6"><h4><strong>John A. Hopper / Web Developer</strong></h4></div>
+
+			  <div class="col-md-6">
+
+			     <ul>
+					   <li><a href=
+				        "/groups">Home</a></li>
+					   <li><a href="/about">About</a></li>
+					   <li><a href="/projects">Projects</a></li>
+					   <li><a href="/resume">Resume</a></li>
+					   <li><a href="/contact">Contact</a></li>
+					   </ul>
+			  	
+
+
+			  </div>
+			 
+			  
+
+			 <!-- End Row --> 
+			</div>
+
+		  <section id="info-section">
+			<div class="row">
+
+      <p><strong>Welcome, </strong><%= @user.first_name %></p>
+     
+      <p><a href="/logout"><em>logout</em></a></p>
+</div>
+</section>
+
+
+
+<section id="resume-section">
+<div class="col-lg-12">
+
+<h3><strong>John A. Hopper</strong></h3>
+<h5>Dallas, Texas (214)-926-4153 jahopp@gmail.com</h5>
+<h5>https://jahweb.herokuapp.com/</h5>
+
+<h3><strong>Full Stack Web Developer</strong></h3>
+<h5><strong><em>Responsive Front-End UI/UX Design, Back-End Server Programming, Database Programming, Cloud Applications, Photography, Video, and Digital Media</em></strong></h5>
+
+<h4><strong>Skills</strong></h4>
+<ul>
+  <li>Front-End Programming</li>
+  <li>Back-End Programming</li>
+  <li>Databases: [MongoDB, Postgresql, SQLite, SQL]
+  <li>Responsive Web Design</li>
+  <li>Mobile-Friendly Web Design: ["I love Bootstrap and other UI Libraries!"]</li>
+  <li>Programming Languages: [Linux Bash, HTML5, CSS3, SQL, JavaScript, JQuery, Ruby, Python]</li>
+  <li>Object Oriented Programming, Model View Controller Architecture, CRUD Methods, Restful API's</li>
+  <li>AngularJS, MEAN Stack, Ruby On Rails, Django, Flask, Nginx, NodeJS, NPM, Gulp, Grunt, ReactJS...</li>
+  <li>Front-End Templating Engines: [ExpressJS, Jinja]</li>
+  <li>Cloud Applications/Deployment: [Amazon Web Services, MLab, Heroku, Google Cloud Services]</li>
+  <li>Balsamiq Wireframing</li>
+  <li>Adobe Photoshop CS6, Adobe Illustrator, Adobe Premiere</li>
+
+</ul>
+
+<h4><strong>Experience</strong></h4>
+<ul>
+<li><strong>February 2017 - Present Rene Mejia, Dallas, Texas - Lead Web Developer & Designer</strong></li>
+<li><em>Assigned to conceptualize, design, build, and deploy a premiere website for graphic artist and painter Rene Mejia.</em></li>
+</ul>
+
+<ul>
+<li><strong>December 2016 - February 2017 Lone Star Hard Money, Dallas, Texas - Consulting Web Developer & Designer
+</strong></li>
+<li><em>Assigned to design and develop new website based upon mobile-friendly and RWD principles, and convert old PDF system into electronic form.
+</em></li>
+</ul>
+
+<ul>
+<li><strong>October 2016 - February 2017 Jables, Dallas, Texas - Consulting Web Developer
+</strong></li>
+<li><em>Perform front-end and back-end code and design tasks for Jables’ web application.</em></li>
+<li><em> Responsible for migration of database.</em></li>
+<li><em>Integration of RWD into existing web app.</em></li>
+</ul>
+
+<ul>
+<li><strong>May 2016 - October 2016 Coding Dojo, Dallas, Texas- Resident Full Stack Developer</strong></li>
+<li><em>Resident full stack developer in rigorous coding boot camp.</em></li>
+<li><em> Professional training in the areas of responsive web design, computer algorithms, web frameworks, API’s, MVC architecture, CRUD methods, project design/conception, object-oriented-programming, back-end programming, front-end programming, and front-end design.</em></li>
+<li><em>Creation of projects from conception to completion and deployment.
+</em></li>
+</ul>
+
+<ul>
+  <li><strong>September 2015 - February 2016 Impressionist Portrait Studios, Dallas, Texas- Staff Photographer</strong></li>
+  <li><em>Photographer for senior portraits, school portraits, sports games, events, and dances.</em></li>
+<li><em>Daily set-up of professional studio environment.</em></li>
+<li><em>Responsible for photo direction and quality imagery.</em></li>
+</ul>
+
+<ul>
+<li><strong>Summer 2007 - Summer 2011 St. John’s Episcopal School, Dallas, Texas- Lead Photographer
+</strong></li>
+<li><em>Lead Photographer for St. John’s Summer Program</em></li>
+<li><em>Responsible for online photo management.</em></li>
+<li><em>Responsible for photo direction and quality imagery.</em></li>
+<li><em>Video Production/Editing</em></li>
+</ul>
+
+<h4><strong>Education</strong></h4>
+<ul>
+<li><strong>May 2016- October 2016 Coding Dojo, Dallas, Texas - Resident Full Stack Development & Software Engineering
+</strong></li></ul>
+
+<ul>
+<li><strong>September 2014- October 2014 Heritage Archaeological Research Group, Dervaig, Scotland, United Kingdom - Resident Archaeologist/Anthropologist</strong></li>
+<li><em>Participated in full-scale archaeological excavation of 17th century viking settlement </em></li>
+<li><em>Generate hypothesis on human living conditions and cultural practices based upon archaeological evidence.</em></li>
+<li><em>Presentation of group research conclusions to regional archaeological foundation.</em></li>
+
+
+</ul>
+
+<ul>
+<li><strong>August 2010- May 2014 University of North Texas, Denton, Texas - Bachelor of Arts, Anthropology</strong></li>
+<li><em>Study and interest on the role of technology and media in the 21st Century.</em></li>
+<li><em>The relationship between business, culture, and media. </em></li>
+<li><em>Creation of websites on the topics of Cyber Anthropology and Cultural Anthropology. 4. Emphasis on web design, interactive media, and computers ( C++ ).
+</em></li>
+</ul>
+
+<ul>
+<li><strong>August 2006- May 2010 Bishop Lynch High School, Dallas, Texas</strong></li>
+<li><em>Graduated with Bishop Lynch Faculty Award for Photography</em></li>
+<li><em> National Award for Excellence in French.</em></li>
+</ul>
+
+
+
+</div>
+</section>
+<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; John Allen Hopper 2017</p>
+                    <p>Webmaster & Designer <a href="johnallenhopper.herokuapp.com">John A. Hopper</a></p>
+                </div>
+            </div>
+        </footer>
+</div>
+</body>
+</html>

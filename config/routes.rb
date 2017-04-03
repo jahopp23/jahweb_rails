@@ -17,6 +17,11 @@ Rails.application.routes.draw do
 
   get 'groups/:id' => 'groups#show'
 
+  get 'about' => 'groups#about'
+  get 'projects' => 'groups#projects'
+  get 'resume' => 'groups#resume'
+  get 'contact' => 'groups#contact'
+
   post 'join_group' => 'members#create'
 
   delete 'leave_group' => 'members#destroy'

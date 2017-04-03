@@ -14,20 +14,11 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: sqlite3
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
-  timeout: 5000
-  password:
 
 
 development:
-  <<: *default
-  adapter: sqlite3
-  database: supergroupdb_development
+  adapter: postgresql
+  database: jahweb_development
   pool: 5
   timeout: 5000
 
@@ -35,10 +26,9 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: ruby_belt
+  
 
-  # The password associated with the postgres role (username).
-  #password:
+  # The password associated with the postgres role (u
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -47,7 +37,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -62,9 +52,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: supergroupdb_test
-  adapter: sqlite3
+  adapter: postgresql
+  database: jahweb_test
   pool: 5
   timeout: 5000
 
@@ -88,8 +77,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: supergroupdb_production
-  adapter: sqlite3
+ 
+  database: jahweb_production
+  adapter: postgresql
   pool: 5 
   timeout: 5000

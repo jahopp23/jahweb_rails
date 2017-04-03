@@ -1,10 +1,26 @@
 class GroupsController < ApplicationController
-	before_action :require_login, only: [:index, :create, :destroy]
+	before_action :require_login, only: [:index, :about, :resume, :create, :destroy]
 	
 	def index
 		@user = current_user
 		@groups = Group.all
 	end
+
+	def about
+       @user = current_user
+	end
+
+    def projects
+       @user = current_user
+    end
+        
+    def resume
+    	@user = current_user
+    end
+
+    def contact
+    	@user = current_user
+    end
 
 	def create
 		user = current_user

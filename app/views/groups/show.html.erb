@@ -1,9 +1,7 @@
+
+<html>
 <head>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
+<%= stylesheet_link_tag "application.scss" %>
 </head>
 
 
@@ -15,10 +13,11 @@
 
 <div class="container">
 
-<div class="panel panel-default">
+<div class="row">
 <ul class="nav nav-pills">
-<li><a href="/groups">Dashboard</a></li>
 <li><a href="/logout">Logout</a></li>
+<li><a href="/groups">Dashboard</a></li>
+
 </ul>
 </div>
 </div>
@@ -36,7 +35,7 @@
 <p><a><%= @group.link %></a></p>
 
 <% if @group.user_id == current_user.id %>
-	<p>Created By: <strong><%= current_user.first_name %></strong></p>
+	<p>Created By: <strong><%= current_user.first_name %> <%=current_user.last_name %></strong></p>
 <% else %>
 	<p>Created By: <%= @group.user.first_name %> <%= @group.user.last_name %></p>
 <% end %>
@@ -85,3 +84,4 @@
 
 </div>
 </div>
+</html>

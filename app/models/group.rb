@@ -6,5 +6,5 @@ class Group < ApplicationRecord
   validates :name, :description, presence: true
   validates :name, length: { minimum: 6 }, allow_nil: true
   validates :description, length: {minimum: 10}, allow_nil: true
-  validates :link, length: {minimum: 10}, allow_nil: true
+  validates :link, presence: true
 end
