@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# jahwebdev
+Rails Web Application for John A. Hopper / Web Developer > Heroku
+>>>>>>> bf46ef6fc06da1e8b9ff2b1343dabec0f32c9311
